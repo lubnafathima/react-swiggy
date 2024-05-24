@@ -1,5 +1,128 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 10rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.logo {
+  width: 3rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5rem;
+}
+
+.nav_link {
+  text-decoration: none;
+  font-size: 1.25rem;
+  color: #000;
+  border-bottom: 1px solid #fff;
+  transition: 0.5s ease;
+}
+
+.nav_link:hover {
+  border-bottom: 1px solid #000;
+}
+
+.container {
+  width: 100%;
+  min-height: 85vh;
+}
+
+.search_bar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.res_content {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.res_card {
+  border: 1px solid #000;
+  width: 18%;
+  cursor: pointer;
+}
+
+.res_img {
+  width: 100%;
+  height: 10rem;
+  border: 1px solid #ccc;
+}
+
+.res_data {
+  padding: .5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.res_name {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.res_menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.res_item {
+  font-size: 1.125rem;
+  color: #555;
+}
+
+.res_name {
+  font-size: 1.3rem;
+}
+
+.res_item {
+  font-size: 1rem;
+}
+
+.res_more {
+  display: flex;
+  justify-content: space-between;
+}
+
+.res_rating, .res_time, .res_fee {
+  font-size: .85rem;
+}
+
+.footer {
+  width: 100%;
+  border-top: 1px solid #ccc;
+  color: #555;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
 }
