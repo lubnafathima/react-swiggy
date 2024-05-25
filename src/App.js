@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Logo from "./public/swiggy.svg";
+import Header from "./components/Header";
+import SearchBar from "./components/SearchBar";
+import Footer from "./components/Footer";
 
 const resDatas = [
   {
@@ -445,34 +447,6 @@ const resDatas = [
   },
 ];
 
-const Header = () => {
-  return (
-    <header className="header">
-      <img src={Logo} alt="Swiggy Logo" className="logo" />
-      <nav className="nav">
-        <a href="" className="nav_link">
-          Home
-        </a>
-        <a href="" className="nav_link">
-          About
-        </a>
-        <a href="" className="nav_link">
-          Cart
-        </a>
-      </nav>
-    </header>
-  );
-};
-
-const SearchBar = () => {
-  return (
-    <div className="search_bar">
-      <input type="text" placeholder="Search" className="" />
-      <button>Search</button>
-    </div>
-  );
-};
-
 const ResCard = (props) => {
   const { resData } = props;
   console.log(resData.data);
@@ -516,15 +490,7 @@ const Container = () => {
   );
 };
 
-const Footer = () => {
-  return (
-    <footer className="footer">
-      <p className="copyright">© 2024</p>
-    </footer>
-  );
-};
-
-const Main = () => {
+const App = () => {
   return (
     <main className="main">
       <Header />
@@ -536,4 +502,4 @@ const Main = () => {
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<Main />);
+root.render(<App />);
