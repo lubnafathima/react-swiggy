@@ -1,6 +1,5 @@
 const ResCard = (props) => {
   const { resData } = props;
-  console.log(resData.data);
 
   return (
     <div key={resData.id} className="res_card">
@@ -9,7 +8,7 @@ const ResCard = (props) => {
         <h2 className="res_name">{resData.name}</h2>
         <div className="res_menu">
           {resData.menu.map((item) => (
-            <p className="res_item">{item.name}</p>
+            <p className="res_item" key={item.id}>{item.name}</p>
           ))}
         </div>
         <div className="res_more">

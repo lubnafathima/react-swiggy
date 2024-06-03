@@ -1,6 +1,9 @@
+import React, { useState } from "react";
 import Logo from "../../public/swiggy.svg";
 
 const Header = () => {
+  const [authBtn, setAuthBtn] = useState("Login");
+
   return (
     <header className="header">
       <img src={Logo} alt="Swiggy Logo" className="logo" />
@@ -15,6 +18,14 @@ const Header = () => {
           Cart
         </a>
       </nav>
+      <button
+        className="button"
+        onClick={() =>
+          authBtn === "Login" ? setAuthBtn("Logout") : setAuthBtn("Login")
+        }
+      >
+        {authBtn}
+      </button>
     </header>
   );
 };
