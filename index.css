@@ -78,7 +78,7 @@
   font-size: 1.2rem;
 }
 
-.res_content {
+.res_content, .shimmer_container {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -140,6 +140,13 @@
 .res_time,
 .res_fee {
   font-size: 0.85rem;
+}
+
+
+.shimmer {
+  width: 17%;
+  height: 40vh;
+  background-color: #ccc;
 }
 
 .footer {
