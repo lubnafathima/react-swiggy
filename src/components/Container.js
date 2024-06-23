@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { resDatas } from "../utils/mockData";
 import ResCard from "./ResCard";
 import Shimmer from "./Shimmer";
@@ -6,6 +6,14 @@ import Shimmer from "./Shimmer";
 const Container = () => {
   const [filteredData, setFilteredData] = useState(resDatas);
   const [searchData, setSearchData] = useState("");
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = () => {
+    const data = fetch("");
+  }
 
   return filteredData.length === 0 ? (
     <Shimmer />
