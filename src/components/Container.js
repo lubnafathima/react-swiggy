@@ -1,21 +1,25 @@
 import React, { useEffect, useState } from "react";
-import { resDatas } from "../utils/mockData";
+// import { resDatas } from "../utils/mockData";
 import ResCard from "./ResCard";
 import Shimmer from "./Shimmer";
 
 const Container = () => {
-  const [filteredData, setFilteredData] = useState(resDatas);
+  // const [filteredData, setFilteredData] = useState(resDatas);
+  const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [searchData, setSearchData] = useState("");
 
   useEffect(() => {
     fetchData();
   }, []);
 
-  const fetchData = () => {
-    const data = fetch("");
+  const fetchData = async () => {
+    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.89960&lng=80.22090&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+    const json = await data.json();
+    setListOfRestaurants(json);
+    console.log(listOfRestaurants);
   }
 
-  return filteredData.length === 0 ? (
+  return !listOfRestaurants?.length ? (
     <Shimmer />
   ) : (
     <section className="container">
@@ -31,18 +35,18 @@ const Container = () => {
           className="button"
           onClick={() => {
             console.log(searchData);
-            const filteredRestaurant = resDatas.filter((res) =>
-              res.name.toLowerCase().includes(searchData.toLowerCase())
+            const listOfRestaurants = resDatas.filter((res) =>
+              res?.name.toLowerCase().includes(searchData.toLowerCase())
             );
-            setFilteredData(filteredRestaurant);
+            setFilteredData(listOfRestaurants);
           }}
         >
           Search
         </button>
         <button
           onClick={() => {
-            const filter = filteredData.filter((res) => res.rating > 4.5);
-            setFilteredData(filter);
+            const filter = listOfRestaurants.filter((res) => res?.rating > 4.5);
+            setListOfRestaurants(filter);
           }}
           className="button"
         >
@@ -50,9 +54,9 @@ const Container = () => {
         </button>
       </div>
       <div className="res_content">
-        {filteredData.map((resData) => (
+        {/* {listOfRestaurants.map((resData) => (
           <ResCard resData={resData} key={resData.id} />
-        ))}
+        ))} */}
       </div>
     </section>
   );
