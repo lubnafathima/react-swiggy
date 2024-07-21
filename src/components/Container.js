@@ -15,8 +15,7 @@ const Container = () => {
   const fetchData = async () => {
     const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.89960&lng=80.22090&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
     const json = await data.json();
-    setListOfRestaurants(json);
-    console.log(listOfRestaurants);
+    setListOfRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   }
 
   return !listOfRestaurants?.length ? (
@@ -54,9 +53,9 @@ const Container = () => {
         </button>
       </div>
       <div className="res_content">
-        {/* {listOfRestaurants.map((resData) => (
-          <ResCard resData={resData} key={resData.id} />
-        ))} */}
+        {listOfRestaurants.map((resData) => (
+          <ResCard resData={resData} key={resData?.info?.id} />
+        ))}
       </div>
     </section>
   );

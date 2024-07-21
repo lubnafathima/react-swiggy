@@ -83,7 +83,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: start;
-  align-items: center;
+  align-items: stretch;
   gap: 2rem;
   padding: 2rem;
 }
@@ -115,7 +115,8 @@
 
 .res_menu {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .res_item {
